@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhayabondhu - Interactive Business Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm & Caring -->
+    <!-- Application Structure Plan: The SPA is designed as a narrative journey. It starts with the market problem (the 'Why'), introduces Chhayabondhu as the structured solution (the 'How'), details the service offerings and competitive advantages (the 'What'), presents financial viability to build confidence (the 'Proof'), and concludes with the positive societal impact. This logical flow from problem to impact makes the business case intuitive and persuasive for potential investors, partners, and clients. -->
+    <!-- Visualization & Content Choices: 
+        - Market Opportunity: Goal: Inform -> Viz: Large Stat Cards -> Justification: High-impact display of key market drivers. Method: HTML/Tailwind. CONFIRM: NO SVG.
+        - Business Model: Goal: Organize -> Viz: HTML Flowchart -> Justification: Clearly visualizes the process and relationships between stakeholders. Method: HTML/Tailwind. CONFIRM: NO SVG/Mermaid.
+        - Target Audience: Goal: Inform -> Viz: Donut Chart -> Justification: Shows the composition of the target demographic (User vs. Buyer). Library: Chart.js/Canvas. CONFIRM: NO SVG.
+        - Service Flexibility: Goal: Compare -> Viz: Interactive Tabbed Content -> Justification: Allows users to actively explore the two main service types (Temp vs. Perm). Method: JS/HTML/Tailwind. CONFIRM: NO SVG.
+        - Competitive Analysis: Goal: Compare -> Viz: Radar Chart -> Justification: Best for multi-attribute comparison of Chhayabondhu vs. informal alternatives. Library: Chart.js/Canvas. CONFIRM: NO SVG.
+        - Financial Projections: Goal: Change -> Viz: Combined Bar/Line Chart -> Justification: Shows relationship between revenue (line) and profit (bars) over time. Library: Chart.js/Canvas. CONFIRM: NO SVG.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4; /* Warm Neutral Background */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .nav-link {
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            color: #E88D67; /* Accent Color */
+        }
+        .active-nav {
+            color: #E88D67;
+            font-weight: 700;
+        }
+        .tab {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .active-tab {
+            background-color: #2F4858; /* Deep Blue */
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <nav class="bg-[#2F4858] text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#hero" class="text-xl font-bold">Chhayabondhu (ছায়াবন্ধু)</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#opportunity" class="nav-link px-3 py-2 rounded-md text-sm font-medium">The Opportunity</a>
+                        <a href="#solution" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Our Solution</a>
+                        <a href="#services" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="#financials" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Financials</a>
+                        <a href="#impact" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Impact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="bg-white pt-16 pb-20 text-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#2F4858] tracking-tight">Professionalizing Home Care in Bangladesh</h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">A trusted, technology-enabled platform connecting families with trained, empathetic caregivers to ensure dignity, safety, and peace of mind.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="opportunity" class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#2F4858]">The Growing Need for a New Standard of Care</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-md text-gray-500">Several key socio-economic trends in Bangladesh are creating an urgent and expanding market for professional, reliable home-based care services.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#5DA271]">
+                    <div class="text-5xl font-bold text-[#5DA271]">70+</div>
+                    <h3 class="mt-2 font-semibold text-lg">Aging Population</h3>
+                    <p class="text-sm text-gray-600 mt-1">Increasing life expectancy means a larger elderly population requiring specialized, long-term support and companionship.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#E88D67]">
+                    <div class="text-5xl font-bold text-[#E88D67]">📈</div>
+                    <h3 class="mt-2 font-semibold text-lg">Rise in Chronic Illnesses</h3>
+                    <p class="text-sm text-gray-600 mt-1">A higher prevalence of conditions like cancer and heart disease necessitates home care providers with disease-specific training.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#3E7CB1]">
+                    <div class="text-5xl font-bold text-[#3E7CB1]">👨‍👩‍👧</div>
+                    <h3 class="mt-2 font-semibold text-lg">Evolving Family Structures</h3>
+                    <p class="text-sm text-gray-600 mt-1">The shift to nuclear families means working adults often lack the time or skills to provide adequate care for aging parents.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-12 bg-white rounded-xl shadow-lg">
+             <div class="text-center mb-10 px-4">
+                <h2 class="text-3xl font-bold text-[#2F4858]">A Seamless, Trust-Based Ecosystem</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-md text-gray-500">Our model is built on a foundation of trust, quality, and accessibility, creating a reliable link between those who need care and those who provide it.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6">
+                <div>
+                     <h3 class="font-bold text-xl text-[#2F4858] mb-4">The Chhayabondhu Model:</h3>
+                     <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-[#3E7CB1] text-white flex items-center justify-center font-bold">1</div>
+                            <p class="ml-3 text-gray-600"><strong class="text-gray-800">Families Connect:</strong> Clients use our user-friendly website or call center to define their specific care needs.</p>
+                        </li>
+                         <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-[#3E7CB1] text-white flex items-center justify-center font-bold">2</div>
+                            <p class="ml-3 text-gray-600"><strong class="text-gray-800">Platform Matches:</strong> Our system identifies the best-suited caregiver based on skills, experience, and client preferences.</p>
+                        </li>
+                         <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-[#5DA271] text-white flex items-center justify-center font-bold">3</div>
+                            <p class="ml-3 text-gray-600"><strong class="text-gray-800">Hospitals Train:</strong> We partner with reputable hospitals to provide certified, disease-specific training, ensuring high standards.</p>
+                        </li>
+                         <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-[#E88D67] text-white flex items-center justify-center font-bold">4</div>
+                            <p class="ml-3 text-gray-600"><strong class="text-gray-800">Care Delivered:</strong> A vetted, trained, and empathetic caregiver provides professional care in the comfort of the client's home.</p>
+                        </li>
+                     </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-center text-[#2F4858] mb-4">Our Target Audience</h3>
+                    <div class="chart-container">
+                        <canvas id="audienceChart"></canvas>
+                    </div>
+                     <p class="text-xs text-center text-gray-500 mt-2">Our service is designed for the patient (User) but purchased and managed by their family (Buyer), primarily middle-income working adults.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#2F4858]">Flexible Services & Unmatched Quality</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-md text-gray-500">We offer adaptable service models and ensure our caregivers are uniquely qualified through a rigorous training and vetting process.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                     <h3 class="font-bold text-xl text-center text-[#2F4858] mb-4">Service Delivery Options</h3>
+                     <div class="flex justify-center mb-4 border-b">
+                        <button id="tab-temp" class="tab flex-1 py-2 px-4 font-semibold active-tab" onclick="switchTab('temp')">Temporary Care</button>
+                        <button id="tab-perm" class="tab flex-1 py-2 px-4 font-semibold" onclick="switchTab('perm')">Permanent Care</button>
+                     </div>
+                     <div id="content-temp">
+                         <h4 class="font-bold text-[#3E7CB1]">Hourly & Part-Time Support</h4>
+                         <p class="text-sm text-gray-600 mt-2">Ideal for families needing assistance for specific hours during the day. Caregivers work shifts and return home, providing support for daily tasks like bathing, feeding, medication reminders, and mobility assistance.</p>
+                     </div>
+                      <div id="content-perm" class="hidden">
+                         <h4 class="font-bold text-[#5DA271]">Full-Time & Live-In Support</h4>
+                         <p class="text-sm text-gray-600 mt-2">Designed for clients who require round-the-clock care and companionship. Caregivers stay with the family full-time for the contract duration, ensuring continuous, dedicated support.</p>
+                     </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg">
+                     <h3 class="font-bold text-xl text-center text-[#2F4858] mb-4">Our Competitive Advantage</h3>
+                    <div class="chart-container">
+                        <canvas id="competitionChart"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-gray-500 mt-2">Compared to informal options, Chhayabondhu excels in the critical areas of professional training, safety, and reliability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="financials" class="py-12 bg-white rounded-xl shadow-lg">
+             <div class="text-center mb-10 px-4">
+                <h2 class="text-3xl font-bold text-[#2F4858]">A Sustainable & Profitable Model</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-md text-gray-500">Our financial projections demonstrate a clear path to growth and profitability, ensuring the long-term viability of our social mission.</p>
+            </div>
+            <div class="px-6">
+                <h3 class="font-bold text-xl text-center text-[#2F4858] mb-4">Three-Year Financial Forecast (in BDT)</h3>
+                <div class="chart-container h-96">
+                    <canvas id="financialsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#2F4858]">Creating Widespread Social & Economic Impact</h2>
+                 <p class="mt-3 max-w-2xl mx-auto text-md text-gray-500">Beyond providing care, our model is designed to strengthen communities and contribute positively to the national economy and healthcare system.</p>
+            </div>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#5DA271]">
+                       <span class="text-2xl text-white">💼</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Meaningful Employment</h3>
+                    <p class="text-sm text-gray-600 mt-1">Creating a new, professional workforce by empowering individuals with certified skills and providing fair, stable wages.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#E88D67]">
+                       <span class="text-2xl text-white">🏥</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Reduced Hospital Burden</h3>
+                    <p class="text-sm text-gray-600 mt-1">Enabling effective, professional at-home care frees up critical hospital beds and resources for more acute cases.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#3E7CB1]">
+                       <span class="text-2xl text-white">❤️</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Strengthened Families</h3>
+                    <p class="text-sm text-gray-600 mt-1">Providing peace of mind and reliable support for families, allowing them to balance work and caregiving responsibilities.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2F4858] text-white py-6">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2025 Chhayabondhu. A new standard in professional home care.</p>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+          const item = tooltipItems[0];
+          let label = item.chart.data.labels[item.dataIndex];
+          if (Array.isArray(label)) {
+            return label.join(' ');
+          }
+          return label;
+        };
+        
+        const sharedChartOptions = {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: {
+                color: '#004369',
+                font: {
+                  weight: 'bold'
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                title: tooltipTitleCallback
+              }
+            }
+          },
+        };
+      
+        const wrapLabel = (label) => {
+          const maxLength = 16;
+          if (label.length <= maxLength) return label;
+          const words = label.split(' ');
+          let lines = [];
+          let currentLine = '';
+          for (const word of words) {
+            if ((currentLine + ' ' + word).trim().length > maxLength) {
+              lines.push(currentLine.trim());
+              currentLine = word;
+            } else {
+              currentLine = (currentLine + ' ' + word).trim();
+            }
+          }
+          if (currentLine) lines.push(currentLine.trim());
+          return lines;
+        };
+      
+        new Chart(document.getElementById('careTypeChart'), {
+          type: 'doughnut',
+          data: {
+            labels: ['Elderly Care', 'Chronic Illness', 'Post-operative Support'],
+            datasets: [{
+              label: 'Care Focus',
+              data: [55, 30, 15],
+              backgroundColor: ['#007399', '#FEA443', '#DB1F48'],
+              borderColor: '#FFFFFF',
+              borderWidth: 3
+            }]
+          },
+          options: { ...sharedChartOptions }
+        });
+      
+        new Chart(document.getElementById('trainingChart'), {
+          type: 'bar',
+          data: {
+            labels: [
+              wrapLabel('Disease-Specific Care'), 
+              wrapLabel('First Aid & Emergency Response'), 
+              'Hygiene', 
+              wrapLabel('Empathetic Communication'), 
+              'Ethics'
+            ],
+            datasets: [{
+              label: 'Training Emphasis (Hours)',
+              data: [40, 25, 20, 30, 15],
+              backgroundColor: '#007399',
+              borderColor: '#004369',
+              borderWidth: 2
+            }]
+          },
+          options: {
+            ...sharedChartOptions,
+            indexAxis: 'y',
+            scales: {
+              x: {
+                ticks: { color: '#004369' },
+                grid: { color: '#E5DDC8' }
+              },
+              y: {
+                ticks: { color: '#004369' }
+              }
+            }
+          }
+        });
+      
+        new Chart(document.getElementById('marketComparisonChart'), {
+          type: 'radar',
+          data: {
+            labels: ['Training', 'Safety', 'Reliability', 'Specialization', 'Cost-Effectiveness'],
+            datasets: [
+              {
+                label: 'Chhayabondhu',
+                data: [9, 9, 8, 9, 7],
+                fill: true,
+                backgroundColor: 'rgba(219, 31, 72, 0.2)',
+                borderColor: '#DB1F48',
+                pointBackgroundColor: '#DB1F48',
+              },
+              {
+                label: 'Informal Helpers',
+                data: [1, 3, 3, 2, 9],
+                fill: true,
+                backgroundColor: 'rgba(0, 115, 153, 0.2)',
+                borderColor: '#007399',
+                pointBackgroundColor: '#007399',
+              }
+            ]
+          },
+          options: {
+            ...sharedChartOptions,
+            scales: {
+              r: {
+                angleLines: { color: '#CCCCCC' },
+                grid: { color: '#CCCCCC' },
+                pointLabels: {
+                  font: { size: 14, weight: 'bold' },
+                  color: '#004369'
+                },
+                ticks: {
+                  backdropColor: '#E5DDC8',
+                  color: '#004369'
+                }
+              }
+            }
+          }
+        });
+      
+        new Chart(document.getElementById('revenueChart'), {
+          type: 'line',
+          data: {
+            labels: ['2025', '2026', '2027'],
+            datasets: [{
+              label: 'Projected Revenue',
+              data: [2850000, 3925000, 5500000],
+              fill: true,
+              backgroundColor: 'rgba(254, 164, 67, 0.3)',
+              borderColor: '#FEA443',
+              tension: 0.1,
+              pointBackgroundColor: '#FEA443',
+              pointRadius: 5
+            }]
+          },
+          options: {
+            ...sharedChartOptions,
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function(value, index, values) {
+                    return (value / 1000000) + 'M';
+                  },
+                  color: '#004369'
+                },
+                grid: { color: '#E5DDC8' }
+              },
+              x: {
+                ticks: { color: '#004369' },
+                grid: { display: false }
+              }
+            }
+          }
+        });
+      
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section, header[id="hero"]');
+        
+        window.addEventListener('scroll', () => {
+          let current = '';
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 80) {
+              current = section.getAttribute('id');
+            }
+          });
+      
+          navLinks.forEach(link => {
+            link.classList.remove('active-nav');
+            if (link.getAttribute('href').includes(current)) {
+              link.classList.add('active-nav');
+            }
+          });
+        });
+      });
+      
+      function switchTab(tabId) {
+        const tempTab = document.getElementById('tab-temp');
+        const permTab = document.getElementById('tab-perm');
+        const tempContent = document.getElementById('content-temp');
+        const permContent = document.getElementById('content-perm');
+      
+        if (tabId === 'temp') {
+          tempTab.classList.add('active-tab');
+          permTab.classList.remove('active-tab');
+          tempContent.classList.remove('hidden');
+          permContent.classList.add('hidden');
+        } else {
+          permTab.classList.add('active-tab');
+          tempTab.classList.remove('active-tab');
+          permContent.classList.remove('hidden');
+          tempContent.classList.add('hidden');
+        }
+      }
+      </script>
+      
+</body>
+</html>

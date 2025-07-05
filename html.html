@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhayabondhu: A New Era of Care in Bangladesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--
+    INFOGRAPHIC NARRATIVE PLAN
+    1.  Introduction/Hook: Present Chhayabondhu as the solution to Bangladesh's growing home-care crisis.
+    2.  Data Overview (The Problem): Use key stats (life expectancy, chronic illness) to establish the urgency and market need.
+    3.  Core Model (The Solution): Use a flowchart to simply explain the business model connecting families, the platform, and hospital-trained caregivers.
+    4.  Key Features (How it Works): Detail the specialized training and flexible service offerings using charts.
+    5.  Competitive Advantage: Use a radar chart to compare Chhayabondhu against informal alternatives, highlighting its superior quality and safety.
+    6.  Financial Projections: Show a positive growth trend with a line chart to build investor/customer confidence.
+    7.  Conclusion (The Impact): Summarize the positive socio-economic contributions of the business.
+    -->
+    <!--
+    VISUALIZATION SELECTION
+    -   Key Stats (Life Expectancy, Payback Period): Goal: Inform -> Chosen Viz: Single Big Number -> Justification: High impact for single data points. Method: HTML/CSS. NO SVG.
+    -   Business Model Flow: Goal: Organize -> Chosen Viz: Flowchart -> Justification: Clearly shows a process. Method: Structured HTML/Tailwind. NO SVG/Mermaid.
+    -   Care Type Breakdown: Goal: Compare (Composition) -> Chosen Viz: Donut Chart -> Justification: Ideal for showing parts of a whole. Library: Chart.js/Canvas. NO SVG.
+    -   Training Modules: Goal: Compare -> Chosen Viz: Bar Chart -> Justification: Good for comparing discrete categories. Library: Chart.js/Canvas. NO SVG.
+    -   Competitive Analysis: Goal: Compare -> Chosen Viz: Radar Chart -> Justification: Excellent for multi-attribute comparison of several subjects. Library: Chart.js/Canvas. NO SVG.
+    -   Revenue Growth: Goal: Change -> Chosen Viz: Line Chart -> Justification: Standard for showing trends over time. Library: Chart.js/Canvas. NO SVG.
+    -   Socio-Economic Impact: Goal: Inform -> Chosen Viz: Icon Pictograph -> Justification: Visually engaging for key takeaways. Method: Unicode/HTML/Tailwind. NO SVG.
+    -->
+    <!--
+    Color Palette: Energetic & Playful
+    #004369 - Dark Blue
+    #007399 - Medium Blue
+    #DB1F48 - Bright Red/Pink
+    #E5DDC8 - Beige
+    #FEA443 - Orange/Yellow
+    -->
+    <!-- NO SVG was used in this file. -->
+    <!-- NO Mermaid JS was used in this file. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E5DDC8; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .text-shadow-custom {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="text-[#004369]">
+
+    <header class="bg-[#004369] text-white p-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-2 text-shadow-custom">Chhayabondhu (ছায়াবন্ধু)</h1>
+        <p class="text-xl md:text-2xl font-semibold text-[#FEA443]">A New Era of Professional Home Care in Bangladesh</p>
+    </header>
+    
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="need" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#007399] mb-2">The Growing Need for Professional Care</h2>
+                <p class="max-w-3xl mx-auto text-lg">Demographic shifts and evolving family structures in Bangladesh have created a critical gap in care for the elderly and chronically ill. Chhayabondhu was born to fill this void.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-6xl font-extrabold text-[#DB1F48]">70+</div>
+                    <p class="mt-2 font-semibold">Years Average Life Expectancy</p>
+                    <p class="text-sm">A growing elderly population requires specialized, long-term support.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-6xl font-extrabold text-[#DB1F48]">📈</div>
+                    <p class="mt-2 font-semibold">Rise in Chronic Illnesses</p>
+                    <p class="text-sm">Conditions like cancer, heart disease, and diabetes necessitate skilled home care.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-6xl font-extrabold text-[#DB1F48]">👨‍👩‍👦</div>
+                    <p class="mt-2 font-semibold">Shift to Nuclear Families</p>
+                    <p class="text-sm">Working adults often lack the time and skills to provide full-time care for loved ones.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#007399] mb-2">Our Solution: A Circle of Trust</h2>
+                <p class="max-w-3xl mx-auto text-lg">We've built a seamless, reliable ecosystem that connects families in need with professionally trained and vetted caregivers.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="text-center p-4 border-2 border-dashed border-[#007399] rounded-lg">
+                        <div class="text-4xl mb-2">🏡</div>
+                        <h3 class="font-bold">Family Seeks Care</h3>
+                        <p class="text-sm">Needs reliable support for a loved one.</p>
+                    </div>
+                    <div class="text-5xl font-bold text-[#FEA443] transform md:rotate-0 rotate-90">&rarr;</div>
+                    <div class="text-center p-4 bg-[#004369] text-white rounded-lg shadow-lg">
+                        <div class="text-4xl mb-2">💻</div>
+                        <h3 class="font-bold">Chhayabondhu Platform</h3>
+                        <p class="text-sm">Matches needs with a trained caregiver.</p>
+                    </div>
+                     <div class="text-5xl font-bold text-[#FEA443] transform md:rotate-0 rotate-90">&rarr;</div>
+                    <div class="text-center p-4 border-2 border-dashed border-[#007399] rounded-lg">
+                        <div class="text-4xl mb-2">🧑‍⚕️</div>
+                        <h3 class="font-bold">Hospital-Trained Caregiver</h3>
+                        <p class="text-sm">Delivers professional, empathetic care at home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offerings" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#007399] mb-2">Personalized & Professional Care</h2>
+                <p class="max-w-3xl mx-auto text-lg">Our services are flexible to meet diverse family needs, underpinned by a rigorous, hospital-led training program that sets a new standard.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-center mb-4">Specialized Care Focus</h3>
+                    <div class="chart-container">
+                        <canvas id="careTypeChart"></canvas>
+                    </div>
+                    <p class="text-sm text-center mt-4">We cater to a wide range of needs, with a primary focus on elderly care and support for patients with chronic or post-operative conditions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-center mb-4">Core Training Curriculum</h3>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="trainingChart"></canvas>
+                    </div>
+                    <p class="text-sm text-center mt-4">Our caregivers are equipped with essential medical and interpersonal skills through partnerships with leading hospitals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="market" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#007399] mb-2">A New Standard in the Market</h2>
+                <p class="max-w-3xl mx-auto text-lg">Chhayabondhu provides a superior alternative to the existing informal and inconsistent care options available in Bangladesh.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                 <h3 class="text-xl font-bold text-center mb-4">Competitive Landscape</h3>
+                <div class="chart-container h-96 md:h-[450px]">
+                    <canvas id="marketComparisonChart"></canvas>
+                </div>
+                 <p class="text-sm text-center mt-4">By excelling in training, safety, and reliability, we offer unparalleled peace of mind at a competitive and accessible price point.</p>
+            </div>
+        </section>
+
+        <!-- <section id="financials" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#007399] mb-2">Financial Outlook: A Sustainable Future</h2>
+                <p class="max-w-3xl mx-auto text-lg">Our business model is built for steady growth and long-term profitability, ensuring we can continue our mission for years to come.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="md:col-span-3 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-center mb-4">Projected Revenue Growth (in BDT)</h3>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center text-center">
+                    <div class="text-7xl font-extrabold text-[#007399]">3.5</div>
+                    <p class="mt-2 text-2xl font-semibold">Years</p>
+                    <p class="mt-2 font-semibold">Projected Payback Period</p>
+                    <p class="text-sm mt-2">A strategic and financially sound investment in the future of healthcare.</p>
+                </div>
+            </div>
+        </section>
+         -->
+        
+        <section id="book-now" class="mb-12">
+            <div class="text-center">
+                <div class="bg-white p-8 rounded-lg shadow-md max-w-md mx-auto">
+                    <h3 class="text-2xl font-bold text-[#007399] mb-4">Find the Bondhu Your Loved One Deserves</h3>
+                    <!-- <p class="text-lg mb-6">Experience professional care for your loved ones today.</p> -->
+                    <button class="bg-[#DB1F48] hover:bg-[#007399] text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors duration-300 shadow-lg transform hover:scale-105">
+                        📞 Book Now
+                    </button>
+                    <p class="text-sm text-gray-600 mt-4">Call us at +880-XXX-XXXX</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#007399] mb-2">Our Impact: Beyond Business</h2>
+                <p class="max-w-3xl mx-auto text-lg">We are committed to creating a positive ripple effect across society, from job creation to strengthening the healthcare ecosystem.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-[#004369] text-white p-6 rounded-lg shadow-md">
+                    <div class="text-6xl font-extrabold mb-2">💼</div>
+                    <h3 class="text-xl font-bold text-[#FEA443]">Meaningful Job Creation</h3>
+                    <p class="text-sm">Empowering a new, professional workforce with valuable skills and fair wages.</p>
+                </div>
+                <div class="bg-[#004369] text-white p-6 rounded-lg shadow-md">
+                    <div class="text-6xl font-extrabold mb-2">🏥</div>
+                    <h3 class="text-xl font-bold text-[#FEA443]">Reduced Hospital Load</h3>
+                    <p class="text-sm">Enabling safe and effective at-home care helps alleviate pressure on hospital resources.</p>
+                </div>
+                <div class="bg-[#004369] text-white p-6 rounded-lg shadow-md">
+                    <div class="text-6xl font-extrabold mb-2">❤️</div>
+                    <h3 class="text-xl font-bold text-[#FEA443]">Support for Modern Families</h3>
+                    <p class="text-sm">Providing peace of mind and reliable support for families balancing work and care.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#004369] text-white p-6 text-center">
+        <p class="font-bold">Chhayabondhu | Professional Care, Peace of Mind.</p>
+        <p class="text-sm mt-1">Learn more at www.chhayabondhu.com.bd (hypothetical)</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+            
+            const sharedChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#004369',
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+            };
+
+            const wrapLabel = (label) => {
+                const maxLength = 16;
+                if (label.length <= maxLength) return label;
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) lines.push(currentLine.trim());
+                return lines;
+            };
+
+            new Chart(document.getElementById('careTypeChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Elderly Care', 'Chronic Illness', 'Post-operative Support'],
+                    datasets: [{
+                        label: 'Care Focus',
+                        data: [55, 30, 15],
+                        backgroundColor: ['#007399', '#FEA443', '#DB1F48'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 3
+                    }]
+                },
+                options: { ...sharedChartOptions }
+            });
+
+            new Chart(document.getElementById('trainingChart'), {
+                type: 'bar',
+                data: {
+                    labels: [
+                        wrapLabel('Disease-Specific Care'), 
+                        wrapLabel('First Aid & Emergency Response'), 
+                        'Hygiene', 
+                        wrapLabel('Empathetic Communication'), 
+                        'Ethics'
+                    ],
+                    datasets: [{
+                        label: 'Training Emphasis (Hours)',
+                        data: [40, 25, 20, 30, 15],
+                        backgroundColor: '#007399',
+                        borderColor: '#004369',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    ...sharedChartOptions,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            ticks: { color: '#004369' },
+                            grid: { color: '#E5DDC8' }
+                        },
+                        y: {
+                            ticks: { color: '#004369' }
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('marketComparisonChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Training', 'Safety', 'Reliability', 'Specialization', 'Cost-Effectiveness'],
+                    datasets: [
+                        {
+                            label: 'Chhayabondhu',
+                            data: [9, 9, 8, 9, 7],
+                            fill: true,
+                            backgroundColor: 'rgba(219, 31, 72, 0.2)',
+                            borderColor: '#DB1F48',
+                            pointBackgroundColor: '#DB1F48',
+                        },
+                        {
+                            label: 'Informal Helpers',
+                            data: [1, 3, 3, 2, 9],
+                            fill: true,
+                            backgroundColor: 'rgba(0, 115, 153, 0.2)',
+                            borderColor: '#007399',
+                            pointBackgroundColor: '#007399',
+                        }
+                    ]
+                },
+                options: {
+                    ...sharedChartOptions,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#CCCCCC' },
+                            grid: { color: '#CCCCCC' },
+                            pointLabels: {
+                                font: { size: 14, weight: 'bold' },
+                                color: '#004369'
+                            },
+                            ticks: {
+                                backdropColor: '#E5DDC8',
+                                color: '#004369'
+                            }
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('revenueChart'), {
+                type: 'line',
+                data: {
+                    labels: ['2025', '2026', '2027'],
+                    datasets: [{
+                        label: 'Projected Revenue',
+                        data: [2850000, 3925000, 5500000],
+                        fill: true,
+                        backgroundColor: 'rgba(254, 164, 67, 0.3)',
+                        borderColor: '#FEA443',
+                        tension: 0.1,
+                        pointBackgroundColor: '#FEA443',
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    ...sharedChartOptions,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return (value / 1000000) + 'M';
+                                },
+                                color: '#004369'
+                            },
+                            grid: { color: '#E5DDC8' }
+                        },
+                        x: {
+                            ticks: { color: '#004369' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
